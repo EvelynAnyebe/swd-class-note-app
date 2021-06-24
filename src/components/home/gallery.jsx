@@ -11,7 +11,7 @@ import meetingrec from "./../../assets/images/gallery/meeting-records-exercise.P
 const Gallery=()=>{
  return(
     <section id="gallery" className="customContainer">
-    <h1>Gallery of projects</h1>
+    <h1 className="text-white">Gallery of projects</h1>
     <div className="gridContainer">
       <div className="gallery-item">
         <img

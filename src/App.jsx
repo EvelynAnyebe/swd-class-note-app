@@ -6,6 +6,7 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Style import
 import "./assets/css/App.css";
@@ -26,6 +27,7 @@ const FourOFour = lazy(() => import("./pages/Four0Four"));
 const Login = lazy(() => import("./pages/Login"));
 const Signup = lazy(() => import("./pages/Signup"));
 const Notes = lazy(() => import("./pages/Notes"));
+const UserNote = lazy(() => import("./pages/UserNote"));
 
 
 
@@ -33,6 +35,7 @@ function App() {
   return (
     <StateProvider>
       <Router>
+        <ScrollToTop />
         <Suspense fallback={<Spinner />}>
           <Switch>
             <Route exact path="/login">
@@ -48,6 +51,9 @@ function App() {
               </Route>
               <ProtectedRoute exact path="/notes">
                 <Notes />  
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/add/note">
+                <UserNote />  
               </ProtectedRoute> 
             </Layout>
             <Route>

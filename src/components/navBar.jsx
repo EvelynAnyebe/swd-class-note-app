@@ -48,6 +48,9 @@ const NavBar = () => {
           ) : (
             <Nav className="ml-auto">
               <Nav.Item>
+                <Link to="/add/note" className="btn btn-md text-secondary">Add Note</Link>
+              </Nav.Item>
+              <Nav.Item>
                 <Link to="/notes" className="btn btn-md text-secondary">Notes</Link>
               </Nav.Item>
               <Nav.Item>

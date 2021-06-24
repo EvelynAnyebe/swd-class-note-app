@@ -12,10 +12,9 @@ main,
   font-size: calc(10px + 2vmin);
   color: #3a3a3a;
   letter-spacing: 1px;
-  word-wrap: break-word;
 }
 
-p{
+p {
   font-size: calc(10px + 2vmin);
 }
 a {
@@ -41,6 +40,7 @@ img {
 Navbar Styles
 ---------------------------------------------*/
 .navbar {
+  width: 100%;
   min-height: 70px;
   padding: 10px;
 }
@@ -66,7 +66,7 @@ header {
   min-height: 100vh;
   display: flex;
   justify-content: flex-start;
-  align-items:center;
+  align-items: center;
 }
 
 .home-header-content {
@@ -82,7 +82,7 @@ header {
   padding: 10px;
 }
 
-.home-header-content h1{
+.home-header-content h1 {
   font-weight: 600;
   font-size: 2.5rem;
   margin-bottom: 15px;
@@ -136,7 +136,7 @@ About styles
 
 .about-top img {
   width: 100%;
-  max-height:300px;
+  max-height: 300px;
   height: 100%;
 }
 
@@ -148,26 +148,26 @@ About styles
 /*-------------------------------------------
    Gallery styles 
    -------------------------------------------------*/
-   #gallery {
-     background-color: #077784;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .gridContainer img {
-    max-height: 250px;
-    width: 100%;
-    height: 100%;
-  }
+#gallery {
+  background-color: #077784;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
-  .gallery-item {
-    box-shadow: 0px 5px 15px -6px rgb(0, 0, 0, 0.4);
-    border-radius: 10px;
-  }
+.gridContainer img {
+  max-height: 250px;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-item {
+  box-shadow: 0px 5px 15px -6px rgb(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
 
 /*-------------------------------------------
 Card styles
@@ -190,7 +190,7 @@ Card styles
 /*--------------------------------------------
 Notes styles
 ----------------------------------------------*/
-.jumbotron{
+.jumbotron {
   background-color: #fcfcfc;
 }
 
@@ -241,11 +241,106 @@ Icon ans Spinner styles
   }
 }
 
+/*-------------------------------------------------
+Add Note styles
+--------------------------------------------------*/
+.notes-container {
+  position: relative;
+  top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 900px;
+  padding: 20px 20px;
+  font-weight: 300;
+}
+
+.notes-container .underline {
+  display: block;
+}
+#note-title{
+  font-weight: 600;
+  text-align: left;
+}
+
+.add-note-container {
+  background-color: #ffffff;
+  position: sticky;
+  top:100px;
+  left: 0;
+  margin: 10px auto;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.add-note-container > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.add-note-container > form > textarea {
+  position: relative;
+  min-height: 150px;
+  background-color: #fcfcfc;
+  outline: 0 !important;
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 4px;
+  color: #6a6a6a;
+  font-family: inherit;
+  font-size: inherit;
+}
+.add-note-fields {
+  margin: 2.5px 0px;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.add-note-container > form > input {
+  position: relative;
+  min-height: 38px;
+  background-color: #ffffff;
+  outline: 0 !important;
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 4px;
+  color: #6a6a6a;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#add-note-btn {
+  margin: 2.5px 0px;
+  padding: 0.65rem 1.1rem;
+  font-size: inherit;
+  font-family: inherit;
+  outline: none;
+  border: 1px solid #cdcdcd;
+  color: #fcfcfc;
+  background-color: #077784;
+  border-radius: 5px;
+}
+.note >h5{
+  font-weight: 600;
+}
+.note p{
+  font-size: calc(12px + 1vmin);
+}
+
 /*------------------------------------------------
 Medium screen
 ---------------------------------------------------*/
 @media all and (max-width: 991px) {
-  
+  .note p{
+    font-size: calc(12px + 1vmin);
+  }
 }
 
 /*------------------------------------------------
@@ -260,9 +355,20 @@ Mobile screen
   .home-header-content {
     min-height: 100vh;
     margin: 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #note-title{
+    font-weight: 600;
+    text-align: center;
+  }
+  .note p{
+    font-size: calc(12px + 1vmin);
   }
 }
-
 
 /*---------------------------------------------
 Responsive for large screens
@@ -291,4 +397,3 @@ Responsive for large screens
     max-width: 300px;
   }
 }
-

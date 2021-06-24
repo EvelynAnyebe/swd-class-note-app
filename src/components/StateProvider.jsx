@@ -32,6 +32,11 @@ function reducer(state, action) {
     }
   }
 
+  if (action.type === "NEW_NOTE") {
+    stateCopy.notes.unshift(action.payload);
+  
+  }
+
   // if action.type is ALERT_MESSAGE
   //set alert message object
   if (action.type === "ALERT_MESSAGE") {
@@ -48,6 +53,7 @@ const initialState = {
     message: "",
     variant: "",
   },
+  notes:[]
 };
 
 function StateProvider({ children }) {
