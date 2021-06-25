@@ -1,4 +1,5 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useEffect } from "react";
+import NotesFromDb from "../utils/NotesFromDb";
 
 export const AppContext = createContext();
 
@@ -37,6 +38,10 @@ function reducer(state, action) {
   
   }
 
+  if (action.type === "SET_NOTE") {
+    stateCopy.notes=action.payload;
+  }
+
   // if action.type is ALERT_MESSAGE
   //set alert message object
   if (action.type === "ALERT_MESSAGE") {
@@ -63,6 +68,18 @@ function StateProvider({ children }) {
     state: appstate,
     dispatch: dispatch,
   };
+
+  useEffect(()=>{
+    const timer=setTimeout(async ()=>{
+      const notes= await NotesFromDb();
+      console.log("State provider effect ran");
+      dispatch({
+        type: "SET_NOTE",
+        payload: notes
+      });
+    },500);
+    return () => clearTimeout(timer);
+  },[])
 
   return (
     <AppContext.Provider value={contextObject}>{children}</AppContext.Provider>

@@ -228,7 +228,7 @@ Icon ans Spinner styles
 
 @media (prefers-reduced-motion: no-preference) {
   .spin-it {
-    animation: spinner infinite 10s linear;
+    animation: spinner infinite 1s linear;
   }
 }
 
@@ -269,11 +269,10 @@ Add Note styles
 }
 
 .add-note-container {
-  background-color: #ffffff;
-  position: sticky;
-  top:100px;
+  position: relative;
+  top:0;
   left: 0;
-  margin: 10px auto;
+  margin: 10px 0px auto;
   width: 100%;
   border-radius: 5px;
 }
@@ -327,11 +326,45 @@ Add Note styles
   background-color: #077784;
   border-radius: 5px;
 }
-.note >h5{
+
+/*------------------------------------------------
+View note styles
+---------------------------------------------------*/
+.note-list{
+ position: relative;
+}
+
+.note-title{
   font-weight: 600;
 }
-.note p{
-  font-size: calc(12px + 1vmin);
+.note-avatar{
+  height: 40px;
+  width: 40px;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+
+.media-body{
+  line-height: 0.2;
+}
+
+#scrollToTop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #077784;
+  color: #fcfcfc;
+  position: fixed;
+  bottom: 25px;
+  right: 30px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.note{
+  background: #eeeeee;
 }
 
 /*------------------------------------------------
@@ -361,13 +394,15 @@ Mobile screen
     align-items: center;
   }
 
-  #note-title{
+  .note-title{
     font-weight: 600;
     text-align: center;
   }
   .note p{
     font-size: calc(12px + 1vmin);
   }
+
+
 }
 
 /*---------------------------------------------
