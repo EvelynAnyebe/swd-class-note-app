@@ -13,14 +13,18 @@ const AddNote = ({ addNote, alertMessage, editNote, noteToEdit, cancel }) => {
     handleSubmit,
     getValues,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    mode: "onTouched",
+  });
 
   const {
     register: register1,
     handleSubmit: handleSubmit1,
     getValues: getValues1,
     formState: { errors: errors1 },
-  } = useForm();
+  } = useForm({
+    mode: "onTouched",
+  });
 
   const [selectedOption, setSelectedOption] = useState(null);
 
