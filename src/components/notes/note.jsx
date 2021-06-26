@@ -10,7 +10,7 @@ const Note = () => {
   let { noteId } = useParams();
   const [classNote, setClassNote] = useState(null);
   const history=useHistory();
-
+ 
   // const {
   //   state: { notes },
   // } = useContextGetter();

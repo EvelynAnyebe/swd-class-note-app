@@ -54,6 +54,7 @@ const Login = () => {
           type: "LOGIN",
           payload: result.body,
         });
+        
       })
       .catch((err) => {
         console.log("this error occurred in login", err);

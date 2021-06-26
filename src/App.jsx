@@ -3,7 +3,6 @@ import StateProvider from "./components/StateProvider";
 import {
   BrowserRouter as Router,
   Route,
-  Redirect,
   Switch,
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
@@ -45,7 +44,6 @@ function App() {
               <Signup />
             </Route>
             <Layout>
-              <Redirect exact from="/" to="/home" />
               <Route exact path="/home">
                 <Home />
               </Route>

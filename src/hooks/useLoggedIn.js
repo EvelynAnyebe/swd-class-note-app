@@ -17,10 +17,14 @@ export default function useLoggedIn() {
             });
         }
 
-        // if isLoggedIn is true, navigate
-        // away from current page to notes page
 
-        if (context.state.isLoggedIn) {
+        if (!context.state.isLoggedIn) {
+            history.replace('/login');
+            return true;
+        }
+
+
+        if(["/home","/login","/signup"].includes(history.location.pathname)){
             history.replace('/notes');
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -1,6 +1,7 @@
 import { createContext, useReducer, useEffect } from "react";
 import NotesFromDb from "../utils/NotesFromDb";
 
+
 export const AppContext = createContext();
 
 // reducer function
@@ -35,7 +36,17 @@ function reducer(state, action) {
 
   if (action.type === "NEW_NOTE") {
     stateCopy.notes.unshift(action.payload);
-  
+  }
+
+  if (action.type === "EDIT_NOTE") {
+    stateCopy.notes = stateCopy.notes.map(
+      note => {
+        if (note._id === action.payload._id) {
+          note=action.payload
+        }
+        return note;
+      }
+    );
   }
 
   if (action.type === "SET_NOTE") {

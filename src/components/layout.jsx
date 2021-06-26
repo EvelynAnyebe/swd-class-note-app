@@ -8,7 +8,7 @@ function Layout({ children }) {
     window.scrollTo(0, 0);
   }
   return (
-    <div>
+    <div id="main">
       <NavBar />
       {children}
       <div id="scrollToTop" onClick={scrollToTop}><FontAwesomeIcon icon={['fas','arrow-up']} className="" aria-hidden="true" />Top</div>
