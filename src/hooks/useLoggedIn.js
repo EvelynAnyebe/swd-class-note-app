@@ -18,15 +18,14 @@ export default function useLoggedIn() {
         }
 
 
-        if (!context.state.isLoggedIn) {
-            history.replace('/login');
-            return true;
+        if (context.state.isLoggedIn) {
+            if(["/home","/login","/signup"].includes(history.location.pathname)){
+                history.replace('/notes');
+            }
         }
 
 
-        if(["/home","/login","/signup"].includes(history.location.pathname)){
-            history.replace('/notes');
-        }
+        
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [context.state.isLoggedIn]);
 }

@@ -1,10 +1,6 @@
 import { lazy, Suspense } from "react";
 import StateProvider from "./components/StateProvider";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 
 // Style import
@@ -28,8 +24,6 @@ const Signup = lazy(() => import("./pages/Signup"));
 const Notes = lazy(() => import("./pages/Notes"));
 const UserNote = lazy(() => import("./pages/UserNote"));
 
-
-
 function App() {
   return (
     <StateProvider>
@@ -44,15 +38,18 @@ function App() {
               <Signup />
             </Route>
             <Layout>
+              <Route exact path="/">
+                <Home />
+              </Route>
               <Route exact path="/home">
                 <Home />
               </Route>
               <ProtectedRoute exact path="/notes">
-                <Notes />  
+                <Notes />
               </ProtectedRoute>
               <ProtectedRoute exact path="/add/note">
-                <UserNote />  
-              </ProtectedRoute> 
+                <UserNote />
+              </ProtectedRoute>
             </Layout>
             <Route>
               <FourOFour />
