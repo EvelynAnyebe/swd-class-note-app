@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Software development class note app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+It is [hosted here](https://swd-class-note-app-2mmn8l20w-evelynanyebe.vercel.app/home).
 
 ## Available Scripts
 
